@@ -1,0 +1,550 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- Design & Programming by Sergey Belyaev, @2006-2025 E-mail: bsn@mail.ru -->
+
+<html>
+<head>
+  <title>44. Стрелки</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  <meta name="viewport" content="width=640, initial-scale=1">
+  <meta name="description" content="Задана последовательность, состоящая только из символов ‘>’, ‘>-->’ и ‘ Входные данные В первой строке входного файла INPUT.TXT записана строка, состоящая из символов ‘>’, ‘ Выходные данные В единственную строку выходного файла OUTPUT.TXT нужно вывести искомое количество стрелок.">
+  <meta name="keywords" content="программирование, задачи по программированию, разбор задач, решение олимпиадных задач, проверяющая система, acm, асм">
+  <meta name='yandex-verification' content='4750e2c69b4e997c' />
+  <meta name='yandex-verification' content='5cb06d7dea348985' />
+  <meta name="google-site-verification" content="h6lljpq7I6H-uuuQLjC_oX_jLfDyQjsygVZup9Xyygs" />  
+  <meta name="google-adsense-account" content="ca-pub-8694399840838901">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"> 
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/144x144.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/images/192x192.png" />
+  <link rel="icon" href="/images/120x120.svg" type="image/x-icon">
+
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Nefh8SHUYvKdxDjhM9lLo1PBQ9drPgXGzg9mdN-pPaxCDl39tw7FgkQYUt2AnYrZaxGVsI_jgXMQuYfk730NHQ" charset="UTF-8"></script><script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(52428040, "init", {
+        id:52428040,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/52428040" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  <script defer src="/inc/copyExampleTable4.js" charset="utf-8"></script>
+
+  <style>
+    a {color: rgb(0, 60, 0); text-decoration: none; border-color: 0;} 
+a:hover {color: red; text-decoration: underline;} 
+
+a.red {color: red; text-decoration: none; border-color: 0;} 
+a.red:hover {color: red; text-decoration: underline;} 
+a.top:link    {color: rgb(0, 0, 0);font-weight:bold;font-family:verdana;font-size:11pt;}
+a.top:visited {color: rgb(0, 0, 0);font-weight:bold;font-family:verdana;font-size:11pt;}
+a.top:hover   {color:#ee2222;font-weight:bold;font-family:verdana;font-size:11pt;}
+
+h1 {margin-top:5; margin-bottom:5; text-align:center; font-family: verdana, tahoma, arial; font-size: 14pt; color : #006600; font-weight: normal;} 
+h2 {font-family: verdana, tahoma, arial; font-size: 14pt; color : #006600; font-weight: normal;} 
+h3 {margin-top:10; margin-bottom:-20; font-family: verdana, tahoma, arial; font-size: 14pt; color : #006600; font-weight: normal;} 
+h4 {font-family: verdana, tahoma, arial; font-size: 11pt; color : #006600; font-weight: bold;} 
+
+hr {color: #509050; width: 100%; height: 1px}
+
+input { background-color: #f0fff0; border: gray 1px solid; font-family: verdana, tahoma; font-size: 8pt} 
+input.button {background-color: #eeeeee;border: gray 1px solid; font-family: verdana, tahoma; font-size: 8pt} 
+select {background-color: #f0fff0; border: gray 1px solid; font-family: verdana, tahoma; font-size: 8pt} 
+textarea {background-color: #f0fff0; border: gray 1px solid; font-family: verdana, tahoma; font-size: 8pt} 
+.menu_title {font-family: Tahoma;font-size: 12px;color: #0D2B01; FONT-WEIGHT: bold;}
+
+.news {color: #006600}
+.btext {text-align:center; font-family: verdana, tahoma, arial; font-size: 8pt; color : #004400; font-weight: bold;} 
+.btext2 {text-align: left; font-family: verdana, tahoma, arial; font-size: 8pt; color : #004400; font-weight: bold;} 
+.btext3 {font-family: verdana, tahoma, Arial; font-size: 8pt; color : #007000;}
+.menu { color: #33a033; font-size: 11pt; text-decoration: none; font-weight: bold;} 
+.title {color: rgb(0,120,0);font-weight:bold;}
+.nomargin {margin: 0 0 0 0}
+p.text {text-indent: 30px; text-align: justify; margin-top: 5px; margin-bottom: 10px;}
+p.stext {text-indent: 30px; font-size: 10pt;text-align: justify; margin-top: 5px; margin-bottom: 10px;}
+img.point {width: 5px; height: 12px; background-image: url(/images/1x1.gif);}
+.normal {background-color: #FFFFFF;border: 0 solid gray;font-size: 12px;font-family: Verdana, Tahoma;}
+.red {color: red;}
+.green {color: #008800;}
+.green2 {color: #008800;}
+.gray {background-color: #e8e8e8;}
+.lightgreen {background-color: #ccffcc;}
+.white {background-color: white;}
+.white2 {background-color: white; font-family: courier;}
+
+table.main {background-color: #007700; width: 100%;}
+th {background-color: #ddffdd; color: #006600; font-size: 12pt; text-decoration : none; font-weight : bold;}
+tr.small {font-size: 8pt;} 
+td.green {background-color: #9DBFB1}
+
+.img_topleft{
+	border : 0px;
+	background-image: url(/images/img_topleft.gif);
+	background-repeat: no-repeat;
+    width:13px;
+	height: 13px;
+}
+.img_top{
+	border : 0px;
+	background-image: url(/images/img_top.gif);
+	background-repeat: repeat-x;
+	height: 13px;
+}
+.img_topright{
+	border : 0px;
+	background-image: url(/images/img_topright.gif);
+	background-repeat: no-repeat;
+   width:13px;
+	height: 13px;
+}
+.img_left{
+	border : 0px;
+	background-image: url(/images/img_left.gif);
+	background-repeat: repeat-y;
+   width:13px;
+}
+.img_right{
+	border : 0px;
+	background-image: url(/images/img_right.gif);
+	background-repeat: repeat-y;
+   width:13px;
+}
+.img_bottomleft{
+	border : 0px;
+	background-image: url(/images/img_bottomleft.gif);
+	background-repeat: no-repeat;
+   width: 13px;
+	height: 13px;
+}
+.img_bottom{
+	border : 0px;
+	background-image: url(/images/img_bottom.gif);
+	background-repeat: repeat-x;
+	height: 13px;
+}
+.img_bottomright{
+	border : 0px;
+	background-image: url(/images/img_bottomright.gif);
+	background-repeat: no-repeat;
+   width:13px;
+	height: 13px;
+}
+.img_bottomright_comment{
+	border : 0px;
+	background-image: url(/images/img_comment.gif);
+	background-repeat: no-repeat;
+   width:13px;
+	height: 13px;
+}
+table.thumb {
+   border-collapse: collapse;
+	text-align:center;
+   margin: 10px;
+   padding: 0px;
+}
+
+a.my {color : #999999; font-size: 10; text-decoration:none}
+a.my:visited {color : #999999; font-size: 10; text-decoration: underline}
+a.my:hover {color : #666666; font-size: 10; text-decoration: underline}
+
+   .cyrilic { 
+    list-style-type: none; /* Прячем исходную нумерацию */
+   }
+   .cyrilic li::before {
+    margin-right: 10px; /* Расстояние от буквы до текста */
+    width: 10px; /* Ширина */
+    display: inline-block; /* Строчно-блочный элемент */
+   }
+   .cyrilic li:nth-child(1)::before { content: 'а)'; }
+   .cyrilic li:nth-child(2)::before { content: 'б)'; }
+   .cyrilic li:nth-child(3)::before { content: 'в)'; }
+   .cyrilic li:nth-child(4)::before { content: 'г)'; }
+   .cyrilic li:nth-child(5)::before { content: 'д)'; }
+   .cyrilic li:nth-child(6)::before { content: 'е)'; }
+   .cyrilic li:nth-child(7)::before { content: 'ё)'; }
+   .cyrilic li:nth-child(8)::before { content: 'ж)'; }
+   .cyrilic li:nth-child(9)::before { content: 'з)'; }
+   .cyrilic li:nth-child(10)::before { content: 'и)'; }
+  </style>
+  <script>var now = new Date(2025,5-1,12,15,35,21)</script>
+
+<script>
+function ValidLF(){
+  if(!enter.lgn.value){
+    alert('Необходимо ввести логин!')
+    enter.lgn.focus()
+  }else 
+  if(!enter.password.value){
+    alert('Необходимо ввести пароль!')
+    enter.password.focus()
+  }
+  else {return true}
+  return false
+}
+function ShowTime(){ 
+  now.setTime(now.getTime()+1000)
+  timer.innerHTML =now.toLocaleString()+"&nbsp;"
+  window.setTimeout('ShowTime()',1000)
+} 
+</script>
+
+<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+
+</head>
+
+<!-- 0 -->
+
+<body onload="ShowTime()" class=nomargin>
+  <table width=100% cellpadding=0 cellspacing=0 style="margin-top: 2" border=0> 
+	<tr height=20><td colspan=5>
+	  <table width=100% cellpadding=0 cellspacing=0 border=0> 
+
+        <tr height=40>
+	      <td colspan=2>
+		    <table cellpadding=0 cellspacing=0><tr>
+		      <td valign=top>
+
+<script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random();//--></script>
+
+</td>
+		      <td><a href=/>
+			    
+ 			       <img src="/images/title.png" width=354 height=40 alt="Школа программиста" title="Школа программиста" border=0></a>
+				
+			  </td>
+			  
+			  <td valign=top>
+			    
+  			       <nobr><a href=# onclick="document.location='/index.asp?locale=en&goback=1'">[English]</a></nobr>
+				
+			  </td>
+			  
+            </tr></table>
+		  </td>
+		  <td valign=top colspan=2 align=right>
+		     <p id=timer class=nomargin></p>
+			 
+		  </td>
+        </tr>
+
+        <tr height=5>
+		  <td background=/images/3lines.gif colspan=4></td>
+		</tr><tr height=20 valign=middle>
+           <td bgcolor=#aaFFaa width=430>
+  <a href=/ class=top>[новости]</a>
+
+<a href=/index.asp?main=tasks class=top>[задачи]</a>
+
+<a href=/asp/do/index.asp class=top>[курсы]</a>
+
+  <a href=/asp/champ/index.asp class=top>[олимпиады]</a>
+</td>
+           <td bgcolor=#609E48 width=20 background=/images/45a.gif></td>
+		   <td bgcolor=#609E48 align=center>
+		   
+		   </td>
+           <td bgcolor=#609E48 width=300 align=right> 
+  <b>:</b>
+  Шакирбай Рахман&nbsp;
+  <a href=/?main=exit>Выход</a>&nbsp; 
+</td>
+		</tr>
+	  </table>
+    </td></tr>	
+	<tr height=8><td colspan=5 background=/images/line.gif><a href=/?main=back&showmenu=0><img src=/images/l_arr.gif border=0 width=15 height=7 alt="Скрыть меню"></a></td></tr>
+	<tr><td colspan=6>
+    <table width=100% cellspacing=0 cellpadding=0><tr height=100%>
+	  
+        <td width=180 valign=top height=100%>		<table width=100% height=100% cellpadding=0 cellspacing=0 valign=top>
+	    <tr height=1%><td>
+
+           
+		<table height=100% width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="line-height: 1.1">
+          <tr height=19>
+		    <td width=1></td>
+            <td width=12 background=/images/l_menu.gif bgcolor="#339933"></td>
+            <td background="/images/s_menu.gif" align=center bgcolor="#88ff88" class=menu_title
+			  			
+			>ИНФОРМАЦИЯ</td>
+            <td width=12 background=/images/r_menu.gif bgcolor="#339933"></td>
+		    <td width=1></td>
+          </tr>
+          <tr valign="top" height=100% bgcolor="#f0fff0">
+		    <td></td>
+            <td colspan="3" background=/images/notepad.gif style="BORDER-BOTTOM: #306E18 1px dashed;  BORDER-left: #306E18 1px dashed;BORDER-right: #306E18 1px dashed; padding: 3px" height=100%>
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=7>О школе</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=40207>Правила</a><br>
+
+<img src=/images/circle.gif width=10 height=10> <a href=/asp/champ>Олимпиады</a><br>
+
+<img src=/images/circle.gif width=10 height=10> <a href=/asp/albom/>Фотоальбом</a><br>
+
+
+<img src=/images/circle.gif width=10 height=10> <a href=/inc/passport.asp>Паспорт</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/index.asp?main=user&id=527711>Мои задачи</a><br>
+
+<img src=/images/circle.gif width=10 height=10> <a href=/index.asp?main=balance>Баланс</a><br>
+
+
+
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=121>Архив олимпиад</a><br>
+
+
+</td><td></td></tr><tr height=2><td colspan=5></td></tr></table>
+
+	    </tr><tr height=1%><td>
+
+		   
+		<table height=100% width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="line-height: 1.1">
+          <tr height=19>
+		    <td width=1></td>
+            <td width=12 background=/images/l_menu.gif bgcolor="#339933"></td>
+            <td background="/images/s_menu.gif" align=center bgcolor="#88ff88" class=menu_title
+			  			
+			>ЗАДАЧНИК</td>
+            <td width=12 background=/images/r_menu.gif bgcolor="#339933"></td>
+		    <td width=1></td>
+          </tr>
+          <tr valign="top" height=100% bgcolor="#f0fff0">
+		    <td></td>
+            <td colspan="3" background=/images/notepad.gif style="BORDER-BOTTOM: #306E18 1px dashed;  BORDER-left: #306E18 1px dashed;BORDER-right: #306E18 1px dashed; padding: 3px" height=100%>
+<img src=/images/circle.gif width=10 height=10> <a href=/index.asp?main=tasks>Архив задач</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/index.asp?main=status >Состояние системы</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/index.asp?main=rating>Рейтинг</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/asp/do/index.asp?main=about>Курсы</a><br> 
+
+		   </td><td></td></tr><tr height=2><td colspan=5></td></tr></table>
+
+	    </tr><tr height=1%><td>
+
+		   
+		<table height=100% width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="line-height: 1.1">
+          <tr height=19>
+		    <td width=1></td>
+            <td width=12 background=/images/l_menu.gif bgcolor="#339933"></td>
+            <td background="/images/s_menu.gif" align=center bgcolor="#88ff88" class=menu_title
+			  			
+			>МЕТОДИЧКА</td>
+            <td width=12 background=/images/r_menu.gif bgcolor="#339933"></td>
+		    <td width=1></td>
+          </tr>
+          <tr valign="top" height=100% bgcolor="#f0fff0">
+		    <td></td>
+            <td colspan="3" background=/images/notepad.gif style="BORDER-BOTTOM: #306E18 1px dashed;  BORDER-left: #306E18 1px dashed;BORDER-right: #306E18 1px dashed; padding: 3px" height=100%>
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=118>Новичкам</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=120>Работа в системе</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=196>Курсы ККДП</a><br>
+
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=845>Дистрибутивы</a><br> 
+
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=43650>Статьи</a><br>
+<img src=/images/circle.gif width=10 height=10> <a href=/article.asp?id_text=2>Ссылки</a><br>
+           </td><td></td></tr><tr height=2><td colspan=5></td></tr></table>
+
+	    </tr><tr height=100%><td>
+
+		   
+		<table height=100% width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="line-height: 1.1">
+          <tr height=19>
+		    <td width=1></td>
+            <td width=12 background=/images/l_menu.gif bgcolor="#339933"></td>
+            <td background="/images/s_menu.gif" align=center bgcolor="#88ff88" class=menu_title
+			  			
+			>СТАТИСТИКА</td>
+            <td width=12 background=/images/r_menu.gif bgcolor="#339933"></td>
+		    <td width=1></td>
+          </tr>
+          <tr valign="top" height=100% bgcolor="#f0fff0">
+		    <td></td>
+            <td colspan="3" background=/images/notepad.gif style="BORDER-BOTTOM: #306E18 1px dashed;  BORDER-left: #306E18 1px dashed;BORDER-right: #306E18 1px dashed; padding: 3px" height=100%>
+		   <br>
+<center>
+
+<!-- Yandex.RTB R-A-122393-2 -->
+<div id="yandex_rtb_R-A-122393-2"></div>
+<script>window.yaContextCb.push(()=>{
+  Ya.Context.AdvManager.render({
+    renderTo: 'yandex_rtb_R-A-122393-2',
+    blockId: 'R-A-122393-2'
+  })
+})</script>
+
+<br>&nbsp;
+
+</center>
+           </td><td></td></tr><tr height=2><td colspan=5></td></tr></table>
+
+		</td></tr>
+ 	    </table>
+</td>
+      
+	  <td valign=top> 	
+
+		<table height=100% width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="line-height: 1.1">
+          <tr height=19>
+		    <td width=1></td>
+            <td width=12 background=/images/l_menu.gif bgcolor="#339933"></td>
+            <td background="/images/s_menu.gif" align=center bgcolor="#88ff88" class=menu_title
+			  			
+			>ЗАДАЧА №44</td>
+            <td width=12 background=/images/r_menu.gif bgcolor="#339933"></td>
+		    <td width=1></td>
+          </tr>
+          <tr valign="top" height=100% bgcolor="#f0fff0">
+		    <td></td>
+            <td colspan="3" background=/images/notepad2.gif style="BORDER-BOTTOM: #306E18 1px dashed;  BORDER-left: #306E18 1px dashed;BORDER-right: #306E18 1px dashed; padding: 3px" height=100%>
+
+<h1>Стрелки</h1>
+<center><i>(Время: 1&nbsp;сек. Память: 16 Мб&nbsp;Сложность: 20%)</i></center>
+<!–– google_ad_section_start ––>
+<p class=text>
+Задана последовательность, состоящая только из символов ‘>’, ‘<’ и ‘-‘. Требуется найти количество стрел, которые спрятаны в этой последовательности. Стрелы – это подстроки вида ‘>>-->’ и ‘<--<<’.
+</p>
+
+<h2>Входные данные</h2>
+
+<p class=text>
+В первой строке входного файла INPUT.TXT записана строка, состоящая из символов ‘>’, ‘<’ и ‘-‘  (без пробелов). Строка состоит не более, чем из 250 символов. 
+</p>
+
+<h2>Выходные данные</h2>
+
+<p class=text>
+В единственную строку выходного файла OUTPUT.TXT нужно вывести искомое количество стрелок.
+</p>
+
+<h2>Пример</h2>
+
+<table class=main cellpadding=2 cellspacing=1>
+<tr><th width=30>№</th><th>INPUT.TXT</th><th>OUTPUT.TXT</th></tr>
+<tr class=white2><td align=center>1</td><td><<<<>>--><--<<--<<>>>--><<<<<</td><td>4</td></tr>
+</table>
+
+<!–– google_ad_section_end ––>
+<br>
+
+<h2>Отправить решение</h2> 
+<form action=/index.asp?main=update&mode=upload&id_task=44 enctype="multipart/form-data" method=post class=nomargin>
+
+  <script src="/design/CodeMirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="/design/CodeMirror/lib/codemirror.css">
+  <link rel="stylesheet" href="/design/CodeMirror/theme/neat.css">
+  <script src="/design/CodeMirror/addon/edit/matchbrackets.js"></script>
+  <style>.CodeMirror{border: 1px solid #888888; height: auto;}</style>
+  <script src="/design/CodeMirror/mode/pascal/pascal.js"></script>	
+  <script src="/design/CodeMirror/mode/vb/vb.js"></script>	
+  <script src="/design/CodeMirror/mode/clike/clike.js"></script>	
+  <script src="/design/CodeMirror/mode/python/python.js"></script>	
+  <script src="/design/CodeMirror/mode/go/go.js"></script>
+  <script src="/design/CodeMirror/mode/javascript/javascript.js"></script>	
+
+  <a name=solution></a>
+  <table width=100%>
+     <tr class=btext>
+	   <td align=left>Исходный код решения:</td>
+	   <td align=right>Язык:
+          <select name=lang onchange="if(value=='PAS' || value=='DPR' || value=='PP') Editor.setOption('mode','text/x-pascal'); if(value=='CPP' || value=='CXX') Editor.setOption('mode','text/x-c++src'); if(value=='JAVA') Editor.setOption('mode','text/x-java');  if(value=='GO') Editor.setOption('mode','text/x-go'); if(value=='BAS') Editor.setOption('mode','text/x-vb'); if(value=='CS') Editor.setOption('mode','text/x-csharp'); if(value=='PY' || value=='PYPY') Editor.setOption('mode',{name:'python',version: 3});">
+            <option value="CPP"  selected>MinGW GNU C++ 14.2.0</option>
+            <option value="PY" >Python 3.12.7</option>
+            <option value="PP" >PascalABC.NET 3.10.0</option>
+            <option value="JAVA" >Java SE JDK 16.0.1</option>
+            <option value="PAS" >Free Pascal 3.2.2</option>
+            <option value="DPR" >Borland Delphi 7.0</option>
+            <option value="CXX" >Microsoft Visual C++ 2017</option>
+            <option value="CS" >Microsoft Visual C# 2017</option>
+            <option value="BAS" >Microsoft Visual Basic 2017</option>
+            <option value="PYPY" >PyPy3.10 v7.3.17</option>
+            <option value="GO" >Go 1.20.14</option>
+            <option value="JS" >Node.js 19.0.0</option>
+          </select>
+	   </td>
+	 </tr><tr>
+        <td colspan=2 align=left style="font-size: 10pt"><textarea name=source id=source maxlength=131072></textarea></td>
+	 </tr><tr class=btext>
+	   <td align=left><span id=sp1>Файл с исходным кодом решения:</span></td>
+	   <td align=right>&nbsp;
+	   
+	   </td>
+	 </tr>
+  </table>
+  <input type=file name=fname id=fname size=60>
+  <input type=button value="Отправить" class=button onclick="if(fname.value.search(/\./)==-1 && Editor.getValue()==''){alert('Необходимо указать файл с программой!'); return false}; if(fname.value.search(/\.exe$/i)==-1){this.disabled=true; submit();} else alert('Нельзя отправлять EXE-файлы!\nОтправляйте только исходники!')">
+</form>
+
+<script>
+  var Editor = CodeMirror.fromTextArea(document.getElementById("source"), {
+        lineNumbers: true,
+		matchBrackets: true,
+        viewportMargin: Infinity,
+		theme: "neat",
+        mode: 'text/x-c++src' 
+	  });
+	  if(Editor.getValue()) sp1.style.display=fname.style.display='none';
+	  CodeMirror.on(Editor, 'change', function(){sp1.style.display=fname.style.display=Editor.getValue()?'none':''});
+</script>
+<br>
+
+<h4>
+
+  <a href=index.asp?main=status&id_t=44>[Все попытки]</a>
+
+  <a href=index.asp?main=bstatus&id_t=44>[Лучшие попытки]</a>
+
+</h4>
+
+<br>
+<center>
+
+<!-- Yandex.RTB R-A-122393-3 -->
+<div id="yandex_rtb_R-A-122393-3"></div>
+<script>window.yaContextCb.push(()=>{
+  Ya.Context.AdvManager.render({
+    renderTo: 'yandex_rtb_R-A-122393-3',
+    blockId: 'R-A-122393-3'
+  })
+})</script>
+
+</center>
+</td><td></td></tr><tr height=2><td colspan=5></td></tr></table>	  </td>
+	</tr></table>
+	</td></tr>
+	<tr height=8><td colspan=5 background=/images/line.gif></td></tr>
+  </table>
+<center>
+<p style="margin:3">
+  <i>Красноярский краевой Дворец пионеров, (c)2006 - 2025, ИНН 246305493507, E-mail: admin&#64;acmp&#46;ru</i>
+</p>
+<br>
+<font style="color: #999999; font-size: 10">
+<!–– google_ad_section_start(weight=ignore) ––>
+
+<!–– google_ad_section_end ––>
+		  
+</font>
+</center>
+
+<iframe src="/icq/icq_update.asp?noupdate=1" width=100 height=20 marginwidth=0 marginheight=0 frameborder=0 scrolling=no></iframe>
+
+</center>
+
+</body>
+</html>
+
